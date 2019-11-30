@@ -1,0 +1,28 @@
+name: 'Publish Docker'
+author: 'John Son'
+branding:
+  icon: 'anchor'
+  color: 'blue'
+
+inputs:
+  username:
+    description: 'The login username for the registry'
+    required: true
+  password:
+    description: 'The login password for the registry'
+    required: true
+  repository:
+    description: 'Repository on registry'
+    required: true
+    
+outputs:
+  tag:
+    description: 'Tagged image'
+  
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
+    - ${{ inputs.repository }}
