@@ -1,5 +1,5 @@
 FROM docker:stable
-LABEL "repository"="https://github.com/son7211/simple-action-demo"
+LABEL "repository"="https://github.com/son7211/action-demo-docker"
 LABEL "maintainer"="John Son"
 
 RUN apk update \
