@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM docker:stable
 LABEL "repository"="https://github.com/son7211/action-demo-docker"
 LABEL "maintainer"="John Son"
 
