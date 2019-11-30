@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM ubuntu:latest
 LABEL "repository"="https://github.com/son7211/action-demo-docker"
 LABEL "maintainer"="John Son"
 
