@@ -4,6 +4,7 @@ set -e
 
 USERNAME=$1
 PASSWORD=$2
+REPOSITORY=$3
 
 
 if [ -z $USERNAME ]; then
