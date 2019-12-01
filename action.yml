@@ -14,7 +14,13 @@ inputs:
   repository:
     description: 'Repository on registry'
     required: true
-    
+  registry:
+    description: 'Registry hostname'
+    required: false
+  tag:
+    description: 'Image tag'
+    required: false
+
 outputs:
   tag:
     description: 'Tagged image'
@@ -26,3 +32,5 @@ runs:
     - ${{ inputs.username }}
     - ${{ inputs.password }}
     - ${{ inputs.repository }}
+    - ${{ inputs.registry }}
+    - ${{ inputs.tag }}
