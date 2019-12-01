@@ -4,9 +4,7 @@ set -e
 
 USERNAME=$1
 PASSWORD=$2
-REPOSITORY=$3
-REGISTRY=$4
-TAG=$5
+
 
 if [ -z $USERNAME ]; then
   echo 'Required username parameter'
@@ -23,19 +21,10 @@ if [ -z $REPOSITORY ]; then
   exit 1
 fi
 
-if [[ -z $TAG ]]; then
-  echo 'Tag to snapshot'
-  TAG=$(date '+%Y%m%d%H%M%S')
-fi
 
 
-IMAGE=$REPOSITORY:$TAG
-if [ -n "$REGISTRY" ]; then
-  IMAGE=$REGISTRY/$IMAGE
-fi
-
-docker build -t $IMAGE .
+docker build .
 docker login --u "$USERNAME" --password-stdin "$PASSWORD" $REGISTRY
-docker push $IMAGE
+docker push 
 
-echo ::set-output name=image::$IMAGE
+
