@@ -34,7 +34,7 @@ if [ -n "$REGISTRY" ]; then
   IMAGE=$REGISTRY/$IMAGE
 fi
 
-docker build . --file ../../ -t $IMAGE 
+docker build . --file ../../Dockerfile -t $IMAGE 
 docker login --username "$USERNAME" --password "$PASSWORD" $REGISTRY
 docker push $IMAGE
 
