@@ -34,7 +34,7 @@ if [ -n "$REGISTRY" ]; then
   IMAGE=$REGISTRY/$IMAGE
 fi
 
-docker build -t $IMAGE 
+docker build https://github.com/son7211/action-demo-docker.git -t $IMAGE .
 docker login --username "$USERNAME" --password "$PASSWORD" $REGISTRY
 docker push $IMAGE
 
