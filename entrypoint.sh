@@ -2,6 +2,11 @@
 
 set -e
 
+USERNAME=$1
+PASSWORD=$2
+REPOSITORY=$3
+REGISTRY=$4
+TAG=$5
 
 if [ -z $USERNAME ]; then
   echo 'Required username parameter'
